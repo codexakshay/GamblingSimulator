@@ -1,17 +1,15 @@
 package com.codex.sim;
 
 import java.util.Random;
-
+import java.math.*;
 public class GamblingSimulation {
 	static int gambler = 100;
-	int win = 1;
-	int lose = 0;
-	Random rand = new Random();
+	public static final int win = 1;
+	public static final int lose = 0;
 	public void 	bet ()
 	{
 		gambler = gambler - 1;
-		int bet = rand.nextInt() % 2;
-		System.out.print(bet);
+		int bet =  (int)Math.round(Math.random());
 		if(bet == win)
 		{
 			gambler = gambler + 2 ;
@@ -28,5 +26,4 @@ public class GamblingSimulation {
 		GamblingSimulation gamble = new GamblingSimulation();
 		gamble.bet();
 	}
-
 }
