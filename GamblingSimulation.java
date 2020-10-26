@@ -5,8 +5,7 @@ import java.math.*;
 
 public class GamblingSimulation {
 	static int gambler = 100;
-	public static final int win = 1;
-	public static final int lose = 0;
+	public static final int WIN = 1;
 	public void InitialMoney()
 	{
 		System.out.println("Gambler Money : " + gambler + "$");
@@ -14,7 +13,7 @@ public class GamblingSimulation {
 	public void bet() {
 		gambler = gambler - 1;
 		int bet = (int) Math.round(Math.random());
-		if (bet == win) {
+		if (bet == WIN) {
 			gambler = gambler + (gambler * 1/2);
 			System.out.println("Gambler won the bet");
 			System.out.println("Gambler Money : " + gambler + "$");
