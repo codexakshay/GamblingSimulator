@@ -23,7 +23,8 @@ public class GamblingSimulation {
 				gambler = gambler + reward;
 				System.out.println("\nGambler won the bet");
 				System.out.println("Gambler Money : " + gambler + "$");
-				totalWon = totalLost + reward;
+				totalWon = totalWon + reward;
+				
 			} else {
 				gambler = gambler - reward;
 				System.out.println("\nGambler lost the bet");
@@ -34,6 +35,7 @@ public class GamblingSimulation {
 			days = days + 1;
 			System.out.println("Total Won : " + totalWon + "$");
 			System.out.println("Total Lost : " + totalLost + "$");
+			
 		} else {
 			System.out.println("\nHAHA... YOU ARE BROKE");
 			System.out.println("Total Won : " + totalWon + "$");
