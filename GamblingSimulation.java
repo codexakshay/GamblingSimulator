@@ -19,7 +19,7 @@ public class GamblingSimulation {
 			System.out.println("Gambler won the bet");
 			System.out.println("Gambler Money : " + gambler + "$");
 		} else {
-			gambler = gambler + (gambler * 1/2);
+			gambler = gambler - (gambler * 1/2);
 			System.out.println("Gambler lost the bet");
 			System.out.println("Gambler Money : " + gambler + "$");
 		}
