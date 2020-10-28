@@ -1,14 +1,12 @@
 package com.codex.sim;
 
-import java.util.Random;
-import java.math.*;
-
 public class GamblingSimulation {
 	static int gambler = 100;
 	public static final int WIN = 1;
 	static int days = 1;
 	static int totalWon = 0, totalLost = 0;
 	static int winCount = 0, LoseCount = 0;
+	static int maxReward = 0, luckyDay = 0;
 
 	public void InitialMoney() {
 		System.out.println("Gambler Money : " + gambler + "$");
@@ -21,6 +19,10 @@ public class GamblingSimulation {
 		int reward = gambler * 1 / 2;
 		if (gambler > 0) {
 			if (bet == WIN) {
+				if (reward > maxReward) {
+					maxReward = reward;
+					luckyDay = days;
+				}
 				gambler = gambler + reward;
 				System.out.println("\n\nGambler won the bet");
 				System.out.println("Gambler Money : " + gambler + "$");
@@ -36,26 +38,31 @@ public class GamblingSimulation {
 			}
 			System.out.println("DAY : " + days + "\nReward : " + reward + "$");
 			days = days + 1;
-			
+
 			System.out.println("\nTotal Amount Won : " + totalWon + "$");
 			System.out.println("Total Amount Lost : " + totalLost + "$");
 
 			System.out.println("\nTotal Win : " + winCount + " Times");
 			System.out.println("Total Lost Times : " + LoseCount + " Times");
-			
+
 		} else {
 			System.out.println("\nHAHA... YOU ARE BROKE");
-			
+
 			System.out.println("\nGambler Money : " + gambler + "$");
-			
+
 			System.out.println("\nTotal Amount Won : " + totalWon + "$");
 			System.out.println("Total Amount Lost : " + totalLost + "$");
-			
+
 			System.out.println("\nTotal Win : " + winCount + " Times");
 			System.out.println("Total Lost : " + LoseCount + " Times");
-			
+
+			System.out.println("\nMax Reward : " + maxReward + "$");
+			System.out.println("Luckiest Day : " + luckyDay);
+
 			System.exit(0);
 		}
+		System.out.println("\nMax Reward : " + maxReward + "$");
+		System.out.println("Luckiest Day : " + luckyDay);
 	}
 
 	public void betDays() {
