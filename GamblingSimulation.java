@@ -110,3 +110,4 @@ public class GamblingSimulation {
 		gamble.Gambling();
 	}
 }
+//UC7
